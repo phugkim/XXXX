@@ -65,6 +65,6 @@ posts = [
 def showTemplate(request):
     context = {
         'data_context' : posts,
-        'title': 'Show Title '
+        'title': 'Show Title'
     }
     return render(request, 'hrm/show_template.html' ,context)

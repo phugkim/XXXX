@@ -1,25 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% if title %}
-    <title>{{ title }} - django</title>
-    {% else %}
-        <title></title>
-    {% endif %} 
-</head>
-<body>
+{% extends "hrm/base.html" %}
 
-    {% block title %}My amazing blog{% endblock %}
+{% block content %}
     {% for post in data_context %}
-        <h1>{{ post.author }}</h1>
-        <ul>
-            <li>{{ post.title }}</li>
-            <li>{{ post.content }}</li>
-            <li>{{ post.date_posts }}</li>
-        </ul>
+    <h1>{{ post.author }}</h1>
+    <ul>
+        <li>{{ post.title }}</li>
+        <li>{{ post.content }}</li>
+        <li>{{ post.date_posts }}</li>
+    </ul>
     {% endfor %}
-</body>
-</html>
+{% endblock content %}
+
